@@ -3,9 +3,11 @@ package hello;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Profile;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.sql.ResultSetMetaData;
@@ -27,10 +29,29 @@ public class Application implements CommandLineRunner {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
+    @Value("${my.secret}")
+    private int mySecret;
+    @Value("${my.number}")
+    private int myNumber;
+    @Value("${my.bignumber}")
+    private String myBignumber;
+    @Value("${my.uuid}")
+    private String myUuid;
+    @Value("${my.number.less.than.ten}")
+    private String myNumberLessThanTen;
+    @Value("${my.number.in.range}")
+    private String myNumberInRange;
+
     @Override
     public void run(String... strings) throws Exception {
 
         log.info("Creating tables");
+        log.info("" + mySecret);
+        log.info("" + myNumber);
+        log.info(myBignumber);
+        log.info(myUuid);
+        log.info(myNumberLessThanTen);
+        log.info(myNumberInRange);
 
         jdbcTemplate.execute("DROP TABLE IF EXISTS customers");
         jdbcTemplate.execute("CREATE TABLE customers(" +
@@ -40,9 +61,9 @@ public class Application implements CommandLineRunner {
         System.out.println(columns);
 
 
-        IntStream.range(0, 100000).parallel().forEach( i -> {
+        IntStream.range(0, 1).parallel().forEach( i -> {
             // Split up the array of whole names into an array of first/last names
-            List<Object[]> splitUpNames = Arrays.asList("John Woo", "Jeff Dean", "Josh Bloch", "Josh Long").stream()
+            List<Object[]> splitUpNames = Arrays.asList(i + "John Woo", i + "Jeff Dean", i + "Josh Bloch", i +"Josh Long").stream()
                     .map(name -> name.split(" "))
                     .collect(Collectors.toList());
 
