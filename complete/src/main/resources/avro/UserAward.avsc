@@ -1,0 +1,13 @@
+{
+  "type" : "record",
+  "name" : "UserAward",
+  "namespace" : "com.bytro.firefly.avro",
+  "fields" : [ {
+    "name" : "userID",
+    "type" : "int"
+  }, {
+    "name" : "awardID",
+    "type" : "int"
+  } ],
+  "doc:" : "A basic schema for storing user-award values"
+}

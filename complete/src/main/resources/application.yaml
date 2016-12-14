@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:1406/
+    username: root
+    password: root
+
+mysql:
+  stats_db_name: supstats
+  stats_table_name: stats_511

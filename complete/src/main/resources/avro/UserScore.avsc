@@ -1,0 +1,13 @@
+{
+  "type" : "record",
+  "name" : "UserScore",
+  "namespace" : "com.bytro.firefly.avro",
+  "fields" : [ {
+    "name" : "userID",
+    "type" : "int"
+  }, {
+    "name" : "scoreType",
+    "type" : "string"
+  } ],
+  "doc:" : "A basic schema for storing user-score"
+}

@@ -1,0 +1,8 @@
+{
+    "type":"record",
+    "name":"User",
+    "namespace":"com.bytro.firefly.avro",
+    "fields":[{
+        "name":"userID","type":"int"
+        }]
+}

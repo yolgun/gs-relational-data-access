@@ -1,0 +1,10 @@
+{
+  "type" : "record",
+  "name" : "Award",
+  "namespace" : "com.bytro.firefly.avro",
+  "fields" : [{
+    "name" : "type",
+    "type" : "string"
+  }],
+  "doc:" : "A basic schema for storing user-game-score values"
+}
