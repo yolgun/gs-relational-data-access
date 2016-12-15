@@ -3,8 +3,8 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.springframework</groupId>
-    <artifactId>gs-relational-data-access</artifactId>
+    <groupId>com.bytro</groupId>
+    <artifactId>firefly</artifactId>
     <version>0.1.0</version>
 
     <parent>
@@ -19,6 +19,7 @@
         <kafka.version>0.10.1.0-cp1</kafka.version>
         <confluent.version>3.1.0</confluent.version>
         <avro.version>1.7.7</avro.version>
+        <jool.version>0.9.12</jool.version>
     </properties>
 
     <dependencies>
@@ -31,11 +32,15 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>20.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jool</artifactId>
+            <version>${jool.version}</version>
         </dependency>
 
         <dependency>
@@ -72,7 +77,6 @@
             </exclusions>
         </dependency>
     </dependencies>
-
 
     <build>
         <plugins>

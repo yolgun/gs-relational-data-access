@@ -5,5 +5,9 @@ spring:
     password: root
 
 mysql:
-  stats_db_name: supstats
-  stats_table_name: stats_511
+  statsDbName: supstats
+  statsTableName: stats_511
+  chunkSize: 1000
+
+kafka:
+  sinkTopic: dbTopic2

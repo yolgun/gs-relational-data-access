@@ -16,7 +16,7 @@ import org.springframework.context.annotation.Configuration;
  */
 
 @Configuration
-public class MyConfiguration {
+public class AppConfiguration {
 	@Bean
 	public Producer<User, UserGameScoreValue> getProducer() {
 		Properties producerConfig = new Properties();
